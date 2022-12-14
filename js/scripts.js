@@ -15,8 +15,21 @@ let pokemonList = [{
   }
 ];
 
+pokemonList.forEach(function(pokemon) {
+  document.write (`
+    Name: ${pokemon.name}
+    Height: ${pokemon.height}
+    Types: ${pokemon.types}`);
+});
 
-for (let i = 0; i < pokemonList.length; i++) {
+// pokemonList.forEach((name, height, types) => {
+//   document.write(`
+//     Name: ${name}
+//     Height: ${height}
+//     Types: ${types}`)
+// });
+
+/*for (let i = 0; i < pokemonList.length; i++) {
   if (pokemonList[i].height < 2.5) {
     document.write(`
       Name: ${pokemonList[i].name}
@@ -32,4 +45,4 @@ for (let i = 0; i < pokemonList.length; i++) {
       Name: ${pokemonList[i].name}
       Height: ${pokemonList[i].height}
       Types: ${pokemonList[i].types}`)
-}
+}*/
