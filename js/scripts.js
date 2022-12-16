@@ -16,22 +16,22 @@ let pokemonRepository = (function() {
       types: [" Bug", " Flying"]
     }
   ];
-//function to add new pokemon to the pokemonList array via push (upend the existing array). Check that the input is an object. 
+  //function to add new pokemon to the pokemonList array via push (upend the existing array). Check that the input is an object.
   function add(pokemon) {
-    if (typeof pokemon != "object"){
+    if (typeof pokemon != "object") {
       console.log("Please enter a valid Pokemon");
-      } else {
-        pokemonList.push(pokemon);
+    } else {
+      pokemonList.push(pokemon);
+    }
   }
-}
-//check that each object.keys matches the format 
-Object.keys(pokemonList).forEach(item => console.log(pokemonList[item]));
+  //check that each object.keys matches the format
+  Object.keys(pokemonList).forEach(item => console.log(pokemonList[item]));
 
-//getAll function to return all of the items in the pokemonList array
+  //getAll function to return all of the items in the pokemonList array
   function getAll() {
     return pokemonList;
   }
-  
+
   return {
     add: add,
     getAll: getAll
@@ -40,51 +40,19 @@ Object.keys(pokemonList).forEach(item => console.log(pokemonList[item]));
 
 //go to the pokemonRepository variable which should return the pokemon list via .gitAll*key is it's a funciton needs () and perform a forEach loop through each parameter of the pokemonRepo
 pokemonRepository.getAll().forEach(function(pokemon) {
-if (pokemon.height < 2.5) {
-  console.log(`
+  if (pokemon.height < 2.5) {
+    document.write(`
     Name: ${pokemon.name}
     Height: ${pokemon.height} - Wow, that's a small one!
     Types: ${pokemon.types}`)
-} else if (pokemon.height > 5) {
-  console.log(`
+  } else if (pokemon.height > 5) {
+    document.write(`
     Name: ${pokemon.name}
     Height: ${pokemon.height} - Wow, that's a big one!
     Types: ${pokemon.types}`)
-} else
-console.log(`
+  } else
+    document.write(`
     Name: ${pokemon.name}
     Height: ${pokemon.height}
     Types: ${pokemon.types}`)
 });
-
-//filter pokemon by name and return the pokemon details
-/*function filterName(arr, query) {
-  return pokemonRepository.getAll().filter((pokemon) => pokemon.name.toLowerCase().includes(query.toLowerCase()));
-}
-
-console.log(filterName(pokemonRepository.getAll(),"blubasaur"));
-
-// pokemonList.forEach((name, height, types) => {
-//   document.write(`
-//     Name: ${name}
-//     Height: ${height}
-//     Types: ${types}`)
-// });
-
-/*for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height < 2.5) {
-    document.write(`
-      Name: ${pokemonList[i].name}
-      Height: ${pokemonList[i].height} - Wow, that's a small one!
-      Types: ${pokemonList[i].types}`)
-  } else if (pokemonList[i].height > 5) {
-    document.write(`
-      Name: ${pokemonList[i].name}
-      Height: ${pokemonList[i].height} - Wow, that's a big one!
-      Types: ${pokemonList[i].types}`)
-  } else
-    document.write(`
-      Name: ${pokemonList[i].name}
-      Height: ${pokemonList[i].height}
-      Types: ${pokemonList[i].types}`)
-}*/
