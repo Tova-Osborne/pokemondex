@@ -1,0 +1,29 @@
+body {
+  font-family: 'Amatic SC', cursive;
+}
+
+.pokemon-list {
+  list-style-type: none;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.name-button {
+  font-family: inherit;
+  font-size: large;
+  padding: 10px;
+  text-align: center;
+  background-color: #415d43;
+  color: #f0e7d7;
+  text-decoration: none;
+  margin: 5px;
+  border-radius: 3px;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
