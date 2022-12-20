@@ -7,17 +7,7 @@ let pokemonRepository = (function() {
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
-  
-  /*function add(pokemon) {
-    if (typeof pokemon === "object" && 
-    Object.keys(pokemon).includes("name") && 
-    Object.keys(pokemon).includes("height") && 
-    Object.keys(pokemon).includes("types")) {
-      pokemonList.push(pokemon);
-     } else {
-      alert("Please fill in all fields to add a Pokemon");
-    }
-  }*/
+
 
   //Add pokemon to the list with the format of a button 
   function addListItem(pokemon){
@@ -43,7 +33,7 @@ let pokemonRepository = (function() {
       json.results.forEach(function (item){
         let pokemon = {
           name: item.name,
-          deatilsUrl: item.url
+          detailsUrl: item.url
         };
         add(pokemon);
       });
