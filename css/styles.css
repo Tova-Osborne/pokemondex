@@ -1,32 +1,42 @@
+<!--<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+  rel="stylesheet"
+/-->
+
+
 body {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 .pokemon-list {
-  list-style-type: none;
+list-style-type: none;
 }
 
 button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-  cursor: pointer;
-  opacity: .8;
+cursor: pointer;
+opacity: 0.8;
 }
 
 .name-button {
-  font-family: inherit;
-  font-size: large;
-  padding: 10px;
-  text-align: center;
-  background-color: #415d43;
-  color: #f0e7d7;
-  text-decoration: none;
-  margin: 5px;
-  border-radius: 3px;
-  transition-duration: 0.2s;
-  transition-property: opacity;
+font-family: inherit;
+font-size: large;
+padding: 10px;
+text-align: center;
+background-color: #415d43;
+color: #f0e7d7;
+text-decoration: none;
+margin: 5px;
+border-radius: 3px;
+transition-duration: 0.2s;
+transition-property: opacity;
 }
+
 
 #modal-container.is-visible {
   position: fixed;
@@ -37,8 +47,8 @@ button:focus,
   width: 100%;
   height: 100%;
   background: rgba(65, 93, 67, 0.5);
-  z-index: 999; 
-  overflow: auto; 
+  z-index: 999;
+  overflow: auto;
   display: grid;
   text-align: center;
 }
@@ -59,7 +69,7 @@ button:focus,
   float: right;
   border: 0;
   background: none;
-  color:#415d43;
+  color: #415d43;
   text-decoration: underline;
 }
 
@@ -70,3 +80,6 @@ button:focus,
 .modal p {
   margin-bottom: 0;
 }
+
+
+
