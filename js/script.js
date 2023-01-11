@@ -11,9 +11,9 @@ let pokemonRepository = (function() {
 
     //Add pokemon to the list with the format of a button
     function addListItem(pokemon) {
-        let pokemonList =$(".list-group");
         let pokemonItem = $("<li></li>");
         let button = $("<button></button>");
+        let pokemonList =$(".list-group");
         pokemonItem.addClass("group-list-item");
         button.text(pokemon.name);
         button.attr("type", "button");
@@ -65,27 +65,25 @@ let pokemonRepository = (function() {
     }
 
     //function to show a modal of the pokemon details (title, height/details to come, and the image)
-    function showModal(title, text, img) {
-        let modalTitle = $(".modal-header");
-        let pokemonName = $("<h5></h5>");
-        let body = $(".modal-body");
-        let height = $("<p></p>");
-        let image = $("<img>");
-        pokemonName.addClass("modal-title fs-5");
-        pokemonName.text(title);
-        height.text(text);
-        image.attr("src", img);
-        image.attr("alt", "Pokemon image");
-        modalTitle.append(pokemonName);
-        body.append(height);
-        body.append(image);
-    }
+    
 
       function showDetails(pokemon) {
         loadDetails(pokemon).then(function() {
-          showModal(pokemon.name,pokemon.name + "'s height is: " + pokemon.height, pokemon.imageURL);
-        });
-      }
+          let modalTitle = $(".modal-header");
+          let pokemonName = $("<h5></h5>");
+          let body = $(".modal-body");
+          let height = $("<p></p>");
+          let image = $("<img>");
+          pokemonName.addClass("modal-title fs-5");
+          pokemonName.text(pokemon.name);
+          height.text(pokemon.name + "'s height is: " + pokemon.height);
+          image.attr("src", pokemon.imageURL);
+          image.attr("alt", "PokemonImage");
+          modalTitle.append(pokemonName);
+          body.append(height);
+          body.append(image);
+      });
+    }
 
       return {
         add: add,
