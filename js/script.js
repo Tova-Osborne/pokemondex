@@ -72,8 +72,8 @@ let pokemonRepository = (function() {
         let height = $("<p></p>");
         let image = $("<img>");
         pokemonName.addClass("modal-title fs-5");
-        pokemonName.innerText = title;
-        height.innerText = text; 
+        pokemonName.text(title);
+        height.text(text);
         image.attr("src", img);
         image.attr("alt", "Pokemon image");
         modalTitle.append(pokemonName);
