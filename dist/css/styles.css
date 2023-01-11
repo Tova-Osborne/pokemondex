@@ -1,0 +1,11 @@
+body {
+    font-family: "Amatic SC", cursive;
+  }
+  
+  p {
+    padding-left: 15px;
+  }
+  
+  button {
+    margin: 5px;
+  }
