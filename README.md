@@ -2,6 +2,8 @@
 
 ## Overview
 
+[Pokemon List App](https://tova-osborne.github.io/pokemondex/#)
+
 The Pokemon List app is a javascript app utilizing the bootstrap framework and the [pokeAPI](https://pokeapi.co). The application calls the pokeAPI to display pokemon names in a list and upon selection will display the pokemon's height and image details in a modal. 
 
 ## APIs 
