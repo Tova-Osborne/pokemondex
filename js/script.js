@@ -66,19 +66,14 @@ let pokemonRepository = (function() {
 
     //function to show a modal of the pokemon details (title, height/details to come, and the image)
     function showModal(title, text, img) {
-        let pokemonModal = $("#pokemonModal");
-        pokemonModal.addEventListener("show.bs.modal", function (event) {
-        var button = event.relatedTarget;
-        var title = button.innerText;
         let modalTitle = $(".modal-header");
-        modalTitle.innerText = title;
         let pokemonName = $("<h5></h5>");
         let body = $(".modal-body");
         let height = $("<p></p>");
         let image = $("<img>");
         pokemonName.addClass("modal-title fs-5");
-        pokemonName.text = title;
-        height.text = text; 
+        pokemonName.innerText = title;
+        height.innerText = text; 
         image.attr("src", img);
         image.attr("alt", "Pokemon image");
         modalTitle.append(pokemonName);
@@ -106,5 +101,6 @@ let pokemonRepository = (function() {
     //go to the pokemonRepository variable which should return the pokemon list via .gitAll*key is it's a funciton needs () and perform a forEach loop through each parameter of the pokemonRepo
     pokemonRepository.getAll().forEach(function(pokemon) {
       pokemonRepository.addListItem(pokemon);
+      pokemonRepository.showDetails(pokemon);
     });
   });
