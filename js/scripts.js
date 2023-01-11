@@ -13,25 +13,27 @@ let pokemonRepository = (function () {
     let pokemonList = $(".list-group");
     let pokemonItem = $("<li></li>");
     let button = $("<button></button>");
+    let modalTitle = $(".modal-header");
+    let pokemonName = $("<h5></h5>");
+    let body = $(".modal-body");
+    let height = $("<p></p>");
+    let image = $("<img>")
     pokemonItem.addClass("group-list-item");
+    pokemonName.addClass("modal-title fs-5")
     button.text(pokemon.name);
     button.attr("type", "button");
     button.addClass("btn btn-dark");
     button.attr("data-bs-toggle", "modal");
     button.attr("data-bs-target", "#pokemonModal");
+    height.text(pokemon.height);
+    pokemonName.text(pokemon.name);
+    image.attr("src", pokemon.imageUrl);
     pokemonItem.append(button);
     pokemonList.append(pokemonItem);
+    modalTitle.append(pokemonName);
+    body.append(height);
+    body.append(image);
   }
-
-  var pokemonModal = document.getElementById("pokemonModal");
-  pokemonModal.addEventListener("show.bs.modal", function (event) {
-    var button = event.relatedTarget;
-    var title = button.innerText;
-    var modalTitle = pokemonModal.querySelector(".modal-title");
-    var modalBody = pokemonModal.querySelector(".modal-body");
-    modalTitle.innerText = title;
-    //modalBody.innerText =
-  });
 
   //getAll function to return all of the items in the pokemonList array
   function getAll() {
@@ -70,6 +72,7 @@ let pokemonRepository = (function () {
         //from the "url": "pokemon/1/ etc" endpoint from the pokeAPI list get the image, height, and types associated with each pokemon
       })
       .then(function (details) {
+        item.name = forms.name;
         item.imageURL = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -88,9 +91,8 @@ let pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.loadList().then(function () {
-  //go to the pokemonRepository variable which should return the pokemon list via .gitAll*key is it's a funciton needs () and perform a forEach loop through each parameter of the pokemonRepo
-  pokemonRepository.getAll().forEach(function (pokemon) {
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
